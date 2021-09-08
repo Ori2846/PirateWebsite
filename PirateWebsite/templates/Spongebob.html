@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"> Spongebob </h1>
+<ul>
+{% for thing in options %}
+  <li>{{ thing }}</li>
+  <form action="/Spongebob/{{ thing }}" method="get">
+      <a href="/Spongebob/{{ thing }}" class="button">Play Episode: {{thing}}</a>
+  </form>
+  <form action="/downloadSpongebob/{{ thing }}" method="get">
+      <button name="forwardBtn" type="submit">Download: {{thing}}</button>
+  </form>
+{% endfor %}
+</ul>
+
+{% endblock %}

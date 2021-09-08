@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Example</title>
+</head>
+<body>
+  <h2>Playing {{filename}}</h2>
+  <form action="http://127.0.0.1:65001/">
+    <input type="submit" value="Return Home" />
+</form>
+  <video width="750" height="400" controls>
+    <source src={{ url_for('static', filename=filename) }} type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</body>
+</html>
